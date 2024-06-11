@@ -61,6 +61,8 @@ jobs:
     env:
       CONFIGIN: ${{ inputs.config }}
       EXCLUDEIN: ${{ inputs.exclude }}
+      MAMBA_DOWNLOAD_FAILFAST: "0"
+      MAMBA_NO_LOW_SPEED_LIMIT: "1"
         
     steps:
       - name: Define Job Output
@@ -97,6 +99,8 @@ jobs:
       CUDAVER: ${{ matrix.cuda }}
       AVXVER: ${{ matrix.releasetag }}
       PCKGVER: ${{ inputs.version }}
+      MAMBA_DOWNLOAD_FAILFAST: "0"
+      MAMBA_NO_LOW_SPEED_LIMIT: "1"
 
     steps:
       - uses: actions/checkout@v4
