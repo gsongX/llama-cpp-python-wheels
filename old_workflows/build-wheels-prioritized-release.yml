@@ -20,7 +20,7 @@ jobs:
       matrix:
         os: [ubuntu-20.04, windows-latest]
         pyver: ["3.10"]
-        cuda: ["11.7.1"]
+        cuda: ["11.8.0"]
         avxver: ["AVX2","AVX","basic"]
     defaults:
       run:
@@ -126,7 +126,7 @@ jobs:
       matrix:
         os: [ubuntu-20.04, windows-latest]
         pyver: ["3.10"]
-        cuda: ["11.7.1"]
+        cuda: ["11.8.0"]
         releasetag: ["AVX","wheels","AVX512","basic"]
     defaults:
       run:
@@ -212,7 +212,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-20.04, windows-latest]
-        cuda: ["11.6.2", "11.7.1", "11.8.0", "12.0.1", "12.1.1", "12.2.0"]
+        cuda: ["11.8.0", "12.1.1", "12.4.1"]
         releasetag: ["AVX","wheels","AVX512","basic"]
     defaults:
       run:
@@ -302,11 +302,11 @@ jobs:
       matrix:
         os: [ubuntu-20.04, windows-latest]
         pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
-        cuda: ["11.6.2", "11.7.1", "11.8.0", "12.0.1", "12.1.1", "12.2.0"]
+        cuda: ["11.8.0", "12.1.1", "12.4.1"]
         releasetag: ["AVX","wheels","AVX512","basic"]
         exclude:
             - pyver: "3.10"
-              cuda: "11.7.1"
+              cuda: "11.8.0"
     defaults:
       run:
         shell: pwsh
@@ -373,7 +373,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-20.04, windows-latest]
-        cuda: ["11.7.1", "11.8.0", "12.0.1", "12.1.1", "12.2.0"]
+        cuda: ["11.8.0", "12.1.1", "12.4.1"]
         avxver: ["AVX2","AVX","basic"]
     defaults:
       run:
@@ -462,11 +462,11 @@ jobs:
       matrix:
         os: [ubuntu-20.04, windows-latest]
         pyver: ["3.10", "3.8", "3.9", "3.11"]
-        cuda: ["11.7.1", "11.8.0", "12.0.1", "12.1.1", "12.2.0"]
+        cuda: ["11.8.0", "12.1.1", "12.4.1"]
         avxver: ["AVX2","AVX","basic"]
         exclude:
             - pyver: "3.10"
-              cuda: "11.7.1"
+              cuda: "11.8.0"
     defaults:
       run:
         shell: pwsh
