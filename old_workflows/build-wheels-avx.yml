@@ -19,7 +19,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-20.04, windows-latest]
-        pyver: ["3.8", "3.9", "3.10", "3.11"]
+        pyver: ["3.10", "3.11"]
         cuda: ["11.8.0", "12.1.1", "12.4.1"]
         releasetag: ["AVX"]
     defaults:
@@ -42,7 +42,7 @@ jobs:
           python-version: ${{ matrix.pyver }}
         
       - name: Setup Mamba
-        uses: conda-incubator/setup-miniconda@v2.2.0
+        uses: conda-incubator/setup-miniconda@v2.3.0
         with:
           activate-environment: "build"
           python-version: ${{ matrix.pyver }}
@@ -55,7 +55,7 @@ jobs:
       - name: VS Integration Cache
         id: vs-integration-cache
         if: runner.os == 'Windows'
-        uses: actions/cache@v3.3.2
+        uses: actions/cache@v3.3.3
         with:
           path: ./MSBuildExtensions
           key: cuda-${{ matrix.cuda }}-vs-integration
@@ -167,7 +167,7 @@ jobs:
           python-version: ${{ matrix.pyver }}
         
       - name: Setup Mamba
-        uses: conda-incubator/setup-miniconda@v2.2.0
+        uses: conda-incubator/setup-miniconda@v2.3.0
         with:
           activate-environment: "build"
           python-version: ${{ matrix.pyver }}
@@ -180,7 +180,7 @@ jobs:
       - name: VS Integration Cache
         id: vs-integration-cache
         if: runner.os == 'Windows'
-        uses: actions/cache@v3.3.2
+        uses: actions/cache@v3.3.3
         with:
           path: ./MSBuildExtensions
           key: cuda-${{ matrix.cuda }}-vs-integration
@@ -319,7 +319,7 @@ jobs:
           python-version: ${{ matrix.pyver }}
         
       - name: Setup Mamba
-        uses: conda-incubator/setup-miniconda@v2.2.0
+        uses: conda-incubator/setup-miniconda@v2.3.0
         with:
           activate-environment: "build"
           python-version: ${{ matrix.pyver }}
@@ -425,7 +425,7 @@ jobs:
           python-version: ${{ matrix.pyver }}
         
       - name: Setup Mamba
-        uses: conda-incubator/setup-miniconda@v2.2.0
+        uses: conda-incubator/setup-miniconda@v2.3.0
         with:
           activate-environment: "build"
           python-version: ${{ matrix.pyver }}

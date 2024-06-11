@@ -118,7 +118,7 @@ jobs:
       - name: Windows OneAPI Base Toolkit and w64devkit Cache
         id: oneapi-base-toolkit-cache
         if: runner.os == 'Windows'
-        uses: actions/cache@v3.3.2
+        uses: actions/cache@v3.3.3
         with:
           path: |
             ./OneAPI_BaseKit.exe
