@@ -5,7 +5,7 @@ on:
     inputs:
       versions:
         description: 'Comma-seperated version tags of llama-cpp-python to build'
-        default: 'v0.2.75,'
+        default: 'v0.2.78,'
         required: true
         type: string
 
